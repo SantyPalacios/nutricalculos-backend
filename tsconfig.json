@@ -34,7 +34,7 @@
     "declaration": true, // Genera archivos .d.ts
     "declarationMap": true, // Mapas para los .d.ts
     "isolatedModules": true, // Requerido para ESM moderno
-    "verbatimModuleSyntax": true, // Mantiene la sintaxis import/export original
+    "verbatimModuleSyntax": false, // Permite transformar imports a CommonJS
     "moduleDetection": "force", // Detecta módulos automáticamente
     "allowJs": true, // ✅ Permite archivos .js (para migraciones)
     "resolveJsonModule": true, // Permite importar archivos .json
