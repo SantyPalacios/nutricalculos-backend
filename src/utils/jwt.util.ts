@@ -6,7 +6,7 @@ import { config } from '../config/env';
  */
 export function generateToken(payload: { id: number; email: string }): string {
     return jwt.sign(payload, config.jwtSecret, {
-        expiresIn: config.jwtExpiresIn,
+        expiresIn: config.jwtExpiresIn as any,
     });
 }
 
