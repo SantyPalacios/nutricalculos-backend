@@ -4,41 +4,49 @@
     /* ============================
      * 📁 Estructura de archivos
      * ============================ */
-    "rootDir": "./src",           // Carpeta de entrada
-    "outDir": "./dist",           // Carpeta donde se genera el JS compilado
-
+    "rootDir": "./src", // Carpeta de entrada
+    "outDir": "./dist", // Carpeta donde se genera el JS compilado
     /* ============================
      * ⚙️ Configuración del entorno
      * ============================ */
-    "target": "ES2020",           // Versión moderna de JS compatible con Node
-    "module": "ESNext",         // Usa el sistema de módulos ESM de Node
+    "target": "ES2020", // Versión moderna de JS compatible con Node
+    "module": "CommonJS", // Usa CommonJS para compatibilidad total
     "moduleResolution": "node",
-    "lib": ["ES2020"],            // API moderna de JS
-    "types": ["node"],            // Incluye los tipos de Node
-    "esModuleInterop": true,      // Permite importar módulos CommonJS fácilmente
+    "lib": [
+      "ES2020"
+    ], // API moderna de JS
+    "types": [
+      "node"
+    ], // Incluye los tipos de Node
+    "esModuleInterop": true, // Permite importar módulos CommonJS fácilmente
     "forceConsistentCasingInFileNames": true,
-    "skipLibCheck": true,         // Acelera la compilación
-
+    "skipLibCheck": true, // Acelera la compilación
     /* ============================
      * 🧠 Control de tipos y chequeo estricto
      * ============================ */
     "strict": true,
     "noUncheckedIndexedAccess": true,
     "exactOptionalPropertyTypes": true,
-
     /* ============================
      * 🧰 Otras opciones útiles
      * ============================ */
-    "sourceMap": true,            // Genera mapas de fuente para depuración
-    "declaration": true,          // Genera archivos .d.ts
-    "declarationMap": true,       // Mapas para los .d.ts
-    "isolatedModules": true,      // Requerido para ESM moderno
+    "sourceMap": true, // Genera mapas de fuente para depuración
+    "declaration": true, // Genera archivos .d.ts
+    "declarationMap": true, // Mapas para los .d.ts
+    "isolatedModules": true, // Requerido para ESM moderno
     "verbatimModuleSyntax": true, // Mantiene la sintaxis import/export original
-    "moduleDetection": "force",   // Detecta módulos automáticamente
-    "allowJs": true,              // ✅ Permite archivos .js (para migraciones)
-    "resolveJsonModule": true,     // Permite importar archivos .json
-    "typeRoots": ["./node_modules/@types"]
+    "moduleDetection": "force", // Detecta módulos automáticamente
+    "allowJs": true, // ✅ Permite archivos .js (para migraciones)
+    "resolveJsonModule": true, // Permite importar archivos .json
+    "typeRoots": [
+      "./node_modules/@types"
+    ]
   },
-  "include": ["src"],             // Compila todo dentro de src/
-  "exclude": ["node_modules", "dist"]
+  "include": [
+    "src"
+  ], // Compila todo dentro de src/
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
 }
