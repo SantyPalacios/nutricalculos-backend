@@ -47,7 +47,6 @@
   ], // Compila todo dentro de src/
   "exclude": [
     "node_modules",
-    "dist",
-    "src/generated"
+    "dist"
   ]
 }
