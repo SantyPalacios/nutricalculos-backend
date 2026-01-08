@@ -10,7 +10,7 @@
      * ⚙️ Configuración del entorno
      * ============================ */
     "target": "ES2020", // Versión moderna de JS compatible con Node
-    "module": "ESNext", // Usa el sistema de módulos ESM de Node
+    "module": "CommonJS", // Usa CommonJS para compatibilidad total y manejo automático de archivos
     "moduleResolution": "node",
     "lib": [
       "ES2020"

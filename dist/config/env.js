@@ -1,4 +1,7 @@
-export const config = {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.config = void 0;
+exports.config = {
     jwtSecret: process.env.JWT_SECRET || 'puerta18',
     jwtExpiresIn: process.env.JWT_EXPIRES_IN || '1h',
     port: parseInt(process.env.PORT || '3000', 10),

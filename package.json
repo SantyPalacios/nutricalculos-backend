@@ -2,7 +2,6 @@
   "name": "backend-express",
   "version": "1.0.0",
   "main": "dist/server.js",
-  "type": "module",
   "scripts": {
     "dev": "tsx src/server.ts",
     "build": "tsc",

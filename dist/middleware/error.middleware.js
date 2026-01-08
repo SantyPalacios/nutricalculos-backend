@@ -1,7 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.errorHandler = errorHandler;
 /**
  * Middleware global de manejo de errores
  */
-export function errorHandler(err, req, res, next) {
+function errorHandler(err, req, res, next) {
     console.error('Error:', err.stack);
     res.status(500).json({
         message: 'Error interno del servidor',

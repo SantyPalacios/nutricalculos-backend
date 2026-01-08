@@ -1,6 +1,9 @@
-import { AuthService } from './auth.service';
-const authService = new AuthService();
-export class AuthController {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.AuthController = void 0;
+const auth_service_1 = require("./auth.service");
+const authService = new auth_service_1.AuthService();
+class AuthController {
     /**
      * POST /api/auth - Registro de usuario
      */
@@ -28,4 +31,5 @@ export class AuthController {
         }
     }
 }
+exports.AuthController = AuthController;
 //# sourceMappingURL=auth.controller.js.map

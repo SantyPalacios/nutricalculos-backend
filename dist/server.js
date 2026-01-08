@@ -1,9 +1,14 @@
-import app from './app';
-import { config } from './config/env';
-const PORT = config.port;
-app.listen(PORT, () => {
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const app_1 = __importDefault(require("./app"));
+const env_1 = require("./config/env");
+const PORT = env_1.config.port;
+app_1.default.listen(PORT, () => {
     console.log(`🚀 Servidor corriendo en http://localhost:${PORT}`);
-    console.log(`📝 Entorno: ${config.nodeEnv}`);
-    console.log(`🔐 CORS habilitado para: ${config.corsOrigin}`);
+    console.log(`📝 Entorno: ${env_1.config.nodeEnv}`);
+    console.log(`🔐 CORS habilitado para: ${env_1.config.corsOrigin}`);
 });
 //# sourceMappingURL=server.js.map

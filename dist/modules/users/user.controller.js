@@ -1,6 +1,9 @@
-import { UserService } from './user.service';
-const userService = new UserService();
-export class UserController {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.UserController = void 0;
+const user_service_1 = require("./user.service");
+const userService = new user_service_1.UserService();
+class UserController {
     /**
      * GET /api/users/me - Obtener usuario logueado
      */
@@ -48,4 +51,5 @@ export class UserController {
         }
     }
 }
+exports.UserController = UserController;
 //# sourceMappingURL=user.controller.js.map

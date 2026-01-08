@@ -1,17 +1,24 @@
-import jwt from 'jsonwebtoken';
-import { config } from '../config/env';
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.generateToken = generateToken;
+exports.verifyToken = verifyToken;
+const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
+const env_1 = require("../config/env");
 /**
  * Generar un token JWT
  */
-export function generateToken(payload) {
-    return jwt.sign(payload, config.jwtSecret, {
-        expiresIn: config.jwtExpiresIn,
+function generateToken(payload) {
+    return jsonwebtoken_1.default.sign(payload, env_1.config.jwtSecret, {
+        expiresIn: env_1.config.jwtExpiresIn,
     });
 }
 /**
  * Verificar un token JWT
  */
-export function verifyToken(token) {
-    return jwt.verify(token, config.jwtSecret);
+function verifyToken(token) {
+    return jsonwebtoken_1.default.verify(token, env_1.config.jwtSecret);
 }
 //# sourceMappingURL=jwt.util.js.map

@@ -1,17 +1,22 @@
-import express from 'express';
-import { corsOptions } from './config/cors';
-import { loggerMiddleware } from './middleware/logger.middleware';
-import { errorHandler } from './middleware/error.middleware';
-import authRoutes from './modules/auth/auth.routes';
-import userRoutes from './modules/users/user.routes';
-const app = express();
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = __importDefault(require("express"));
+const cors_1 = require("./config/cors");
+const logger_middleware_1 = require("./middleware/logger.middleware");
+const error_middleware_1 = require("./middleware/error.middleware");
+const auth_routes_1 = __importDefault(require("./modules/auth/auth.routes"));
+const user_routes_1 = __importDefault(require("./modules/users/user.routes"));
+const app = (0, express_1.default)();
 // Middlewares globales
-app.use(corsOptions);
-app.use(express.json());
-app.use(loggerMiddleware);
+app.use(cors_1.corsOptions);
+app.use(express_1.default.json());
+app.use(logger_middleware_1.loggerMiddleware);
 // Rutas
-app.use('/api/auth', authRoutes);
-app.use('/api/users', userRoutes);
+app.use('/api/auth', auth_routes_1.default);
+app.use('/api/users', user_routes_1.default);
 // Ruta de bienvenida
 app.get('/', (req, res) => {
     res.json({
@@ -24,6 +29,6 @@ app.get('/', (req, res) => {
     });
 });
 // Middleware de manejo de errores (debe ir al final)
-app.use(errorHandler);
-export default app;
+app.use(error_middleware_1.errorHandler);
+exports.default = app;
 //# sourceMappingURL=app.js.map

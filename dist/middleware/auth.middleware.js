@@ -1,10 +1,16 @@
-import jwt from 'jsonwebtoken';
-import { config } from '../config/env';
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.authMiddleware = authMiddleware;
+const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
+const env_1 = require("../config/env");
 /**
  * Middleware de autenticación
  * Verifica el token JWT en el header Authorization
  */
-export function authMiddleware(req, res, next) {
+function authMiddleware(req, res, next) {
     const header = req.headers.authorization;
     if (!header) {
         res.status(401).json({ message: 'Token requerido' });
@@ -16,7 +22,7 @@ export function authMiddleware(req, res, next) {
         return;
     }
     try {
-        const decoded = jwt.verify(token, config.jwtSecret);
+        const decoded = jsonwebtoken_1.default.verify(token, env_1.config.jwtSecret);
         req.user = decoded;
         next();
     }
